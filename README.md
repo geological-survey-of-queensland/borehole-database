@@ -1,4 +1,4 @@
-# Boreholes in GSQ
+# GSQ Borehole Register
 
 ## Terminology
 
