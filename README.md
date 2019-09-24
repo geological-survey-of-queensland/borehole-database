@@ -9,7 +9,7 @@ Well, drillhole, and bore are synonyms of borehole.
 ## Background
  - Boreholes exist for a wide range of purposes, with varying lifecycles and actors.  
  - There are multiple systems of record for boreholes across government, e.g. [GSQ](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [RSH](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [OGIA](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [DES](https://www.des.qld.gov.au/).  
- - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) for mineral, [CoalLog](https://ausimm.com/coal-log/) for coal.  
+ - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for mineral, [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
 
 ## The borehole register 
@@ -48,14 +48,14 @@ The borehole register is derived from the following standards:
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
 |sub_purpose|A narrower definition of the purpose.|--|
 |drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|--|
-|status|The status of borehole at the end of each activity, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended.|--|
+|status|The current status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended.|--|
 |status_event|The event that triggered the status change, e.g. lodging of notice of intention to drill, lodging of well completion report.|--|
 |status_date|The date of the status event.|--|
 |origin_latitude|Angular distance in decimal degrees, east or west of the prime meridian. A negative value represents a west longitude.|--|
 |origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|--|
 |origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|--|
 |depth_datum|The point from which all depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
-|location_confidence|A quantifiable value in metres that represents the positional difference between a geospatial record and reality. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
+|location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
 |azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). GeoSciML uses a term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal.|--|
@@ -69,7 +69,12 @@ The borehole register is derived from the following standards:
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
 
 ### Other data elements that require consideration for inclusion
-
+| Data Element | Description | Rank |
+|--|--|--|
+|--|--|--|
+|--|--|--|
+|--|--|--|
+|--|--|--|
 
 ## Data mapping
 | Data Element | MERLIN | PPDM | GeosciML | CoalLog |
@@ -99,6 +104,7 @@ The borehole register is derived from the following standards:
 |operator|operator_code|--|operator|--|
 |driller|--|--|driller|drill_company|
 |geometry|--|--|--|--|
+
 
 
 ## See also
