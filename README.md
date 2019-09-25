@@ -27,9 +27,10 @@ While the borehole entity is generalised, datasets can be specialised for partic
  1. Queensland Government knows the location, attributes and status of all boreholes in Queensland.  
  2. The register helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
  3. The register is a single, trusted system of record for all boreholes in Queensland.
- 4. The register is integrated with data input mechanisms, data consumers, and data display systems. 
+ 4. The register is integrated with data input mechanisms, data consumers, and data display systems.  
+ 5. The register levereages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
 
-### What the register is not
+### What the borehole register is not
 The register is not a borehole data management system. There are multiple commercial systems that meet this need.  
 
 ## Derivation
@@ -38,8 +39,14 @@ The borehole register is derived from the following standards:
  - [PPDM](https://ppdm.org) for petroleum and gas
  - [GeoSciML](http://www.geosciml.org/) for mineral
  - [CoalLog](https://ausimm.com/coal-log/) for coal
+ 
+## Borehole data categories
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/simplified_borehole_data_model.png" width="680"><br>
+Figure 1: Borehole data categories</p>
 
-## Data elements
+
+## Borehole data elements
 | Data Element | Description | Rank |
 |---|---|---|
 |bore_id|A persistent identifier for the borehole.|--|
@@ -68,7 +75,7 @@ The borehole register is derived from the following standards:
 |driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole).|--|
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
 
-### Data elements that are inferred
+### Borehole data elements that are inferred
 We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole register. This reference allows us to **infer** the data relationships.
 
 | Data element | How is it inferred? | 
@@ -81,7 +88,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
 
-### Other data elements that require consideration
+### Other borehole data elements that require consideration
 | Data element | Description | Decision |
 |---|---|---|
 |QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|--|
@@ -91,55 +98,58 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |Perforation|This data is displayed in GeoResGlobe.|--|
 |Comments|Of the 56000 boreholes in MERLIN, 7000 have comments. Can be captured for historical records, but not considered primary metadata.|--|
 
-## Data mapping to standards
+## Borehole data mapping to standards
 | Data element | MERLIN | PPDM | GeosciML | CoalLog |
 |---|---|---|---|---|
-|bore_id| bore_no | uwi |-|-|
-|bore_name | primary_bore_name |--| drillhole_id |borehole_name |
+|bore_id| bore_no | well_num |-|-|
+|bore_name | primary_bore_name |well_name| drillhole_id |borehole_name |
 |bore_alias |secondary_bore_name<br>prev_bore_id|well_alias|-|-|
 |purpose|bore_type_code|--|purpose|borehole_type<br>borehole_purpose_x|
 |sub_purpose|bore_subtype_code|--|--|--|
 |drilling_method| |--|drillingmethod|bit_type|
-|status|--|--|--|borehole_status_x|
-|status_date|status_date|--|--|--|
+|status|--|current_status|--|borehole_status_x|
+|status_date|status_date|current_status_date|--|--|
 |status_event| |--|--|--|
-|origin_latitude|--|--|location|easting|
-|origin_longitude|--|--|location|northing|
-|origin_elevation|--|--|elevation|--|
-|depth_datum|elev_datum_code|--|borehole-elevation-crs|height_datum|
+|origin_latitude|--|surface_latitude|location|easting|
+|origin_longitude|--|surface_longitude|location|northing|
+|origin_elevation|--|depth_datum_elev|elevation|--|
+|depth_datum|elev_datum_code|depth_datum|borehole-elevation-crs|height_datum|
 |location_confidence|loc_method_code<br>loc_accuracy|--|--|location_acc|
-|total_depth|--|--|boreholelength?|total_depth|
+|total_depth|--|final_td|boreholelength|total_depth|
 |azimuth|--|--|--|azimuth|
 |inclination|well_path|--|inclinationtype|inclination|
 |surface_circumstance|--|--|startpoint|--|
-|drill_start_date|spud_date|--|dateofdrilling|drill_date|
-|drill_end_date|completion_date|--|dateofdrilling|complete_date|
-|permit_type|tenure_type|--|--|lease_no|
-|permit_number|tenure_no|--|--|lease_no|
-|operator|operator_code|--|operator|--|
+|drill_start_date|spud_date|spud_date|dateofdrilling|drill_date|
+|drill_end_date|completion_date|completion_date|dateofdrilling|complete_date|
+|permit_type|tenure_type|lease_name|--|lease_no|
+|permit_number|tenure_no|lease_num|--|lease_no|
+|operator|operator_code|operator|operator|--|
 |driller|--|--|driller|drill_company|
 |geometry|--|--|--|--|
 
-## Vocabularies
+## Borehole vocabularies
 The following vocabularies are required:
 
 | Vocabulary | MERLIN | GeoSciML | PPDM | CoalLog |
 |---|---|---|---|---|
-|borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|--|--|
+|borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|--|blasthole, coal quality, environmental, gas, geotech, hydrological, lox, service, structure|
 |borehole sub-purpose|exploration well, line of oxidation borehole, observation bore, geotechnical borehole, supply bore, collaborative drilling borehole, water injection well, test bore, scout well, reference bore, appraisal well, petroleum injection well, quality borehole, gas content borehole, structure borehole, coal seam gas injection well, exploration borehole, spontaneous combustion borehole, development well, collaborative drilling initiative well, geothermal heat flow bore, mineral & extractive industries appraisal borehole|--|--|--|
-|borehole drilling method|--|--|--|--|
-|borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|--|--|
+|borehole drilling method|--|--|--|auger, blades/drag blade, hammer, mill claw, poly crystalline diamond open, rock roller/tricone, surface/wing, diamond core (wireline), poly crystalline diamond core (conventional), poly crystalline diamond core (wireline), tungsten carbide core (conventional)|
+|borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|--|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|--|
 |borehole inclination|vertical, horizontal, vertical and horizontal|--|--|--|
 |borehole surface circumstance|--|--|--|--|
 
 
+## Relationships
+* Content to come   
+
 ## See also
-* TBA
-
-
-## Files
-* TBA
+* PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
+* PPDM [International Petroleum Data Standards](https://ppdm.org/ppdm/PPDM/IPDS/PPDM/IPDS.aspx)
+* GeoSciML (Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
+* GeoSciML Lite (Borehole View](http://docs.opengeospatial.org/is/16-008/16-008.html#403)
+* [CoalLog Standard](https://ausimm.com/coal-log/)
 
 
 ## License
