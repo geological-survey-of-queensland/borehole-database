@@ -41,7 +41,7 @@ The borehole register is derived from the following standards:
 
 ## Data elements
 | Data Element | Description | Rank |
-|--|--|--|
+|---|---|---|
 |bore_id|A persistent identifier for the borehole.|--|
 |bore_name|Unique name and/or number assigned to each borehole.|--|
 |bore_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
@@ -70,18 +70,20 @@ The borehole register is derived from the following standards:
 
 ### Data elements that are inferred
 We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole register. This reference allows us to **infer** the data relationships.
+
 | Data element | How is it inferred? | 
-|--|--|
+|---|---|
 |Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
 |Company report no|QDEX reports will migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
-|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. **Analysis required**.|
-|Hold location|This data is displayed in GeoResGlobe. **Analysis required**.|
+|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Analysis required.|
+|Hold location|This data is displayed in GeoResGlobe. Analysis required.|
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
+
 
 ### Other data elements that require consideration
 | Data element | Description | Decision |
-|--|--|--|
+|---|---|---|
 |QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|--|
 |Rig release date|This data is displayed in GeoResGlobe.|--|
 |Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|--|
@@ -91,7 +93,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 
 ## Data mapping to standards
 | Data element | MERLIN | PPDM | GeosciML | CoalLog |
-|--|--|--|--|--|
+|---|---|---|---|---|
 |bore_id| bore_no | uwi |-|-|
 |bore_name | primary_bore_name |--| drillhole_id |borehole_name |
 |bore_alias |secondary_bore_name<br>prev_bore_id|well_alias|-|-|
@@ -120,8 +122,9 @@ We avoid data duplication by creating a **reference** to data held in other regi
 
 ## Vocabularies
 The following vocabularies are required:
-| Vocabulary | MERLIN |GeoSciML|PPDM|CoalLog|
-|--|--|--|--|--|
+
+| Vocabulary | MERLIN | GeoSciML | PPDM | CoalLog |
+|---|---|---|---|---|
 |borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|--|--|
 |borehole sub-purpose|exploration well, line of oxidation borehole, observation bore, geotechnical borehole, supply bore, collaborative drilling borehole, water injection well, test bore, scout well, reference bore, appraisal well, petroleum injection well, quality borehole, gas content borehole, structure borehole, coal seam gas injection well, exploration borehole, spontaneous combustion borehole, development well, collaborative drilling initiative well, geothermal heat flow bore, mineral & extractive industries appraisal borehole|--|--|--|
 |borehole drilling method|--|--|--|--|
