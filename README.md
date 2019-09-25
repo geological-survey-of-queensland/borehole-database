@@ -44,7 +44,7 @@ The borehole register is derived from the following standards:
 |--|--|--|
 |bore_id|A persistent identifier for the borehole.|--|
 |bore_name|Unique name and/or number assigned to each borehole.|--|
-|bore_alias|Names & identifiers that a well may otherwise be known as. Includes previous or alternate well identifiers assigned to the well by a regulatory agency.|--|
+|bore_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
 |sub_purpose|A narrower definition of the purpose.|--|
 |drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|--|
@@ -68,16 +68,29 @@ The borehole register is derived from the following standards:
 |driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole).|--|
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
 
-### Other data elements that require consideration for inclusion
-| Data Element | Description | Rank |
-|--|--|--|
-|--|--|--|
-|--|--|--|
-|--|--|--|
-|--|--|--|
+### Data elements that are inferred
+We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole register. This reference allows us to **infer** the data relationships.
+| Data element | How is it inferred? | 
+|--|--|
+|Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
+|Company report no|QDEX reports will migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
+|Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
+|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. **Analysis required**.|
+|Hold location|This data is displayed in GeoResGlobe. **Analysis required**.|
+|Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
-## Data mapping
-| Data Element | MERLIN | PPDM | GeosciML | CoalLog |
+### Other data elements that require consideration
+| Data element | Description | Decision |
+|--|--|--|
+|QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|--|
+|Rig release date|This data is displayed in GeoResGlobe.|--|
+|Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|--|
+|Total depth logger|This data is displayed in GeoResGlobe.|--|
+|Perforation|This data is displayed in GeoResGlobe.|--|
+|Comments|Of the 56000 boreholes in MERLIN, 7000 have comments. Can be captured for historical records, but not considered primary metadata.|--|
+
+## Data mapping to standards
+| Data element | MERLIN | PPDM | GeosciML | CoalLog |
 |--|--|--|--|--|
 |bore_id| bore_no | uwi |-|-|
 |bore_name | primary_bore_name |--| drillhole_id |borehole_name |
@@ -95,7 +108,7 @@ The borehole register is derived from the following standards:
 |location_confidence|loc_method_code<br>loc_accuracy|--|--|location_acc|
 |total_depth|--|--|boreholelength?|total_depth|
 |azimuth|--|--|--|azimuth|
-|inclination|--|--|inclinationtype|inclination|
+|inclination|well_path|--|inclinationtype|inclination|
 |surface_circumstance|--|--|startpoint|--|
 |drill_start_date|spud_date|--|dateofdrilling|drill_date|
 |drill_end_date|completion_date|--|dateofdrilling|complete_date|
@@ -105,6 +118,17 @@ The borehole register is derived from the following standards:
 |driller|--|--|driller|drill_company|
 |geometry|--|--|--|--|
 
+## Vocabularies
+The following vocabularies are required:
+| Vocabulary | MERLIN |GeoSciML|PPDM|CoalLog|
+|--|--|--|--|--|
+|borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|--|--|
+|borehole sub-purpose|exploration well, line of oxidation borehole, observation bore, geotechnical borehole, supply bore, collaborative drilling borehole, water injection well, test bore, scout well, reference bore, appraisal well, petroleum injection well, quality borehole, gas content borehole, structure borehole, coal seam gas injection well, exploration borehole, spontaneous combustion borehole, development well, collaborative drilling initiative well, geothermal heat flow bore, mineral & extractive industries appraisal borehole|--|--|--|
+|borehole drilling method|--|--|--|--|
+|borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|--|--|
+|borehole status event|--|--|--|--|
+|borehole inclination|vertical, horizontal, vertical and horizontal|--|--|--|
+|borehole surface circumstance|--|--|--|--|
 
 
 ## See also
