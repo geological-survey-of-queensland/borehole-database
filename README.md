@@ -45,6 +45,8 @@ The borehole register is derived from the following standards:
 <img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/simplified_borehole_data_model.png" width="680"><br>
 Figure 1: Borehole data categories</p>
 
+The above diagram shows the broad categories of data that are recorded for boreholes. 
+
 ## Borehole conceptual data model
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/borehole_conceptual_data_model.svg" width="680"><br>
