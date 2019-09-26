@@ -45,6 +45,10 @@ The borehole register is derived from the following standards:
 <img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/simplified_borehole_data_model.png" width="680"><br>
 Figure 1: Borehole data categories</p>
 
+## Borehole conceptual data model
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/borehole_conceptual_data_model.svg" width="680"><br>
+Figure 2: Borehole conceptual data model</p>
 
 ## Borehole data elements
 | Data Element | Description | Rank |
@@ -52,6 +56,7 @@ Figure 1: Borehole data categories</p>
 |bore_id|A persistent identifier for the borehole.|--|
 |bore_name|Unique name and/or number assigned to each borehole.|--|
 |bore_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
+|association|Relationship to other boreholes, e.g. parent, previous, etc.|--|
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
 |sub_purpose|A narrower definition of the purpose.|--|
 |drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|--|
@@ -80,7 +85,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 
 | Data element | How is it inferred? | 
 |---|---|
-|Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
+|Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
 |Company report no|QDEX reports will migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
 |Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Analysis required.|
