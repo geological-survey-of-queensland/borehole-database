@@ -149,6 +149,7 @@ The following vocabularies are required:
 
 
 ## See also
+* [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
 * PPDM [International Petroleum Data Standards](https://ppdm.org/ppdm/PPDM/IPDS/PPDM/IPDS.aspx)
 * GeoSciML (Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
