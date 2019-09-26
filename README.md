@@ -146,9 +146,6 @@ The following vocabularies are required:
 |borehole surface circumstance|--|--|--|--|
 
 
-## Relationships
-* Content to come   
-
 ## See also
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
 * PPDM [International Petroleum Data Standards](https://ppdm.org/ppdm/PPDM/IPDS/PPDM/IPDS.aspx)
