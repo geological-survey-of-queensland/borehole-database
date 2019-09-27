@@ -147,6 +147,17 @@ The following vocabularies are required:
 |borehole inclination|vertical, horizontal, vertical and horizontal|--|vertical, horizontal, directional|--|
 |borehole surface circumstance|--|--|--|--|
 
+### Reporting guideline lookup values
+| Vocabulary | P&G | Mineral | Coal |
+|---|---|---|---|
+|borehole purpose|csg, petroleum, petroleum injection well, water injection well, water observation bore, water supply bore|--|--||
+|borehole sub-purpose|exploration, appraisal, development|--|--|
+|borehole drilling method|--|air core, auger mechanical, calweld large diameter, diamond drill hole, pre-collared drillhole, open hole percussion, rotary air blast hole, reverse circulation percussion, rotary mud, unknown drill type, vacuum bedrock drill hole, vibratory drill hole, sonic, water bore, navi drilling, sonic drilling|--|
+|borehole status|cased and suspended, completed, on injection, on production, plugged and abandoned, suspended|--|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
+|borehole status event|--|--|--|
+|borehole inclination|vertical, deviated|--|--|
+|borehole surface circumstance|--|--|--|
+|depth datum|rotary table, kelly bushing, ground level, other|ground level, drillpipe collar, rotary table, other|--|
 
 ## See also
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
