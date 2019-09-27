@@ -117,13 +117,13 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |status|--|current_status|--|borehole_status_x|
 |status_date|status_date|current_status_date|--|--|
 |status_event| |--|--|--|
-|origin_latitude|--|surface_latitude|location|easting|
-|origin_longitude|--|surface_longitude|location|northing|
+|origin_latitude|bhf_locations|surface_latitude|location|easting|
+|origin_longitude|bhf_locations|surface_longitude|location|northing|
 |origin_elevation|--|depth_datum_elev|elevation|--|
 |depth_datum|elev_datum_code|depth_datum|borehole-elevation-crs|height_datum|
 |location_confidence|loc_method_code<br>loc_accuracy|--|--|location_acc|
 |total_depth|--|final_td|boreholelength|total_depth|
-|azimuth|--|--|--|azimuth|
+|azimuth|bhf_orientations<br>azimuth|--|--|azimuth|
 |inclination|well_path|--|inclinationtype|inclination|
 |surface_circumstance|--|--|startpoint|--|
 |drill_start_date|spud_date|spud_date|dateofdrilling|drill_date|
@@ -139,12 +139,12 @@ The following vocabularies are required:
 
 | Vocabulary | MERLIN | GeoSciML | PPDM | CoalLog |
 |---|---|---|---|---|
-|borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|--|blasthole, coal quality, environmental, gas, geotech, hydrological, lox, service, structure|
-|borehole sub-purpose|exploration well, line of oxidation borehole, observation bore, geotechnical borehole, supply bore, collaborative drilling borehole, water injection well, test bore, scout well, reference bore, appraisal well, petroleum injection well, quality borehole, gas content borehole, structure borehole, coal seam gas injection well, exploration borehole, spontaneous combustion borehole, development well, collaborative drilling initiative well, geothermal heat flow bore, mineral & extractive industries appraisal borehole|--|--|--|
+|borehole purpose|greenhouse gas storage, petroleum, water, stratigraphic, mineral, coal, coal seam gas|--|produce, inject, cycle, service, minerals, research, observation|blasthole, coal quality, environmental, gas, geotech, hydrological, lox, service, structure|
+|borehole sub-purpose|exploration well, line of oxidation borehole, observation bore, geotechnical borehole, supply bore, collaborative drilling borehole, water injection well, test bore, scout well, reference bore, appraisal well, petroleum injection well, quality borehole, gas content borehole, structure borehole, coal seam gas injection well, exploration borehole, spontaneous combustion borehole, development well, collaborative drilling initiative well, geothermal heat flow bore, mineral & extractive industries appraisal borehole|--|supply, storage, disposal, relief, strat hole|--|
 |borehole drilling method|--|--|--|auger, blades/drag blade, hammer, mill claw, poly crystalline diamond open, rock roller/tricone, surface/wing, diamond core (wireline), poly crystalline diamond core (conventional), poly crystalline diamond core (wireline), tungsten carbide core (conventional)|
-|borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|--|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
+|borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|active, in-active, plugged and abandoned, reclaimed|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|--|
-|borehole inclination|vertical, horizontal, vertical and horizontal|--|--|--|
+|borehole inclination|vertical, horizontal, vertical and horizontal|--|vertical, horizontal, directional|--|
 |borehole surface circumstance|--|--|--|--|
 
 
