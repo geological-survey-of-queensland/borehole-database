@@ -159,6 +159,29 @@ The following vocabularies are required:
 |borehole surface circumstance|--|--|--|
 |depth datum|rotary table, kelly bushing, ground level, other|ground level, drillpipe collar, rotary table, other|--|
 
+## Software design
+The current MERLIN Oracle database is a relational database with 58 borehole-related tables.  
+* 
+
+The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For an example of this, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
+http://jsoneditoronline.org/. 
+
+
+### Read: 
+JSON lends itself 
+### Write: 
+
+### Delete: 
+
+### Reporting & Analytics:
+Data compilations can be created in Amazon Redshift (data warehouse). e.g. We might create a prepared view of all boreholes by region.
+
+### Data migration
+Existing MERLIN data will be extracted from the Oracle database. Primary metadata is written to the database, the remainder of the data written to JSON key-value pairs.
+
+### Data extraction from new reporting guidelines
+As data is submitted by industry through the lodgement portal, the borehole data can be harvested from the submitted Excel files. Primary metadata is written to the database, other data written to JSON key-value pairs.
+
 ## See also
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
