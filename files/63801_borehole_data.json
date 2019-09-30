@@ -1,0 +1,119 @@
+{
+  "bore_no": 63801,
+  "borehole_details": {
+    "operator_code": "SSL",
+    "primary_bore_name": "SPRING ROCK",
+    "secondary_bore_name": "2",
+    "bore_type_code": "CSG",
+    "bore_subtype_code": "APP",
+    "bore_status_code": "SUS",
+    "status_date": "24/NOV/10",
+    "drill_result_code": "CSG",
+    "onshore_offshore_code": "ON",
+    "tenure_type": "PL",
+    "tenure_no": 92,
+    "loc_method_code": "GPSG94",
+    "locality": "E OF INJUNE",
+    "ground_level_rl": 489.64,
+    "elev_method_code": "SURVUN",
+    "elev_datum_code": "AHD",
+    "collar_height": 4,
+    "spud_date": "15/JUN/10",
+    "completion_date": "30/JUN/10",
+    "rig_release_date": "11/JUL/10",
+    "total_depth_driller_md": 989,
+    "total_depth_logger": 990.15,
+    "date_entered": "31/MAY/10",
+    "date_updated": "06/SEP/13",
+    "confidential_flag": "N",
+    "well_path": "VERTICAL",
+    "comments": "-Individual coal seam details not given.\n-No location survey attached - only well pegging summary.\n-Thirty one desorption samples were taken throughout the Staircase Sandstone Member. No results given in the report.",
+    "total_depth_tvd": 989
+  },
+  "cores": [
+    {
+      "core_seq_no": 1,
+      "top": 400.5,
+      "bottom": 436,
+      "core_no": "1",
+      "core_diameter": 76,
+      "loc_code": "NR",
+      "date_entered": "06/SEP/13"
+    },
+    {
+      "core_seq_no": 2,
+      "top": 436,
+      "bottom": 899,
+      "core_no": "2",
+      "core_diameter": 76,
+      "loc_code": "NR",
+      "date_entered": "06/SEP/13",
+      "date_updated": "06/SEP/13"
+    },
+    {
+      "core_seq_no": 3,
+      "top": 982,
+      "bottom": 989,
+      "core_no": "3",
+      "core_diameter": 76,
+      "loc_code": "NR",
+      "date_entered": "06/SEP/13"
+    }
+  ],
+  "wireline_logs": [
+    {
+      "wire_log_seq_no": 1,
+      "top": 495.2,
+      "bottom": 986.2,
+      "log_type_code": "FMI",
+      "capture_method_code": "WELLHD",
+      "contractor_code": 317219,
+      "digital_avail_flag": "N",
+      "date_entered": "06/SEP/13"
+    },
+    {
+      "wire_log_seq_no": 2,
+      "top": 0,
+      "bottom": 989.3,
+      "log_type_code": "GR",
+      "log_unit_measure_code": "API",
+      "capture_method_code": "WELLHD",
+      "contractor_code": 317219,
+      "digital_avail_flag": "N",
+      "date_entered": "06/SEP/13"
+    },
+    {
+      "wire_log_seq_no": 3,
+      "top": 360,
+      "bottom": 989.3,
+      "log_type_code": "CAL",
+      "log_unit_measure_code": "INS",
+      "capture_method_code": "WELLHD",
+      "contractor_code": 317219,
+      "digital_avail_flag": "N",
+      "date_entered": "06/SEP/13"
+    },
+    {
+      "wire_log_seq_no": 4,
+      "top": 360,
+      "bottom": 989.3,
+      "log_type_code": "DL",
+      "log_unit_measure_code": "G/CM*3",
+      "capture_method_code": "WELLHD",
+      "contractor_code": 317219,
+      "digital_avail_flag": "N",
+      "date_entered": "06/SEP/13"
+    },
+    {
+      "wire_log_seq_no": 5,
+      "top": 360,
+      "bottom": 989.3,
+      "log_type_code": "DT",
+      "log_unit_measure_code": "US/FT",
+      "capture_method_code": "WELLHD",
+      "contractor_code": 317219,
+      "digital_avail_flag": "N",
+      "date_entered": "06/SEP/13"
+    }
+  ]
+}
