@@ -88,7 +88,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 | Data element | How is it inferred? | 
 |---|---|
 |Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
-|Company report no|QDEX reports will migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan.|
+|Company report no|QDEX reports will be migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
 |Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Analysis required.|
 |Hold location|This data is displayed in GeoResGlobe. Analysis required.|
@@ -161,20 +161,13 @@ The following vocabularies are required:
 
 ## Software design
 The current MERLIN Oracle database is a relational database with 58 borehole-related tables.  
-* 
+* TODO - add last edited
 
 The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For an example of this, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
 http://jsoneditoronline.org/. 
 
-
-### Read: 
-JSON lends itself 
-### Write: 
-
-### Delete: 
-
 ### Reporting & Analytics:
-Data compilations can be created in Amazon Redshift (data warehouse). e.g. We might create a prepared view of all boreholes by region.
+Borehole data compilations can be created in Amazon Redshift (data warehouse). e.g. We could create a prepared view of all boreholes by region. 
 
 ### Data migration
 Existing MERLIN data will be extracted from the Oracle database. Primary metadata is written to the database, the remainder of the data written to JSON key-value pairs.
