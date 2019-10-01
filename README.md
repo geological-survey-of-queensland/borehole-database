@@ -105,6 +105,38 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |Perforation|This data is displayed in GeoResGlobe.|--|
 |Comments|Of the 56000 boreholes in MERLIN, 7000 have comments. Can be captured for historical records, but not considered primary metadata.|--|
 
+
+## Borehole data mapping to industry reporting templates
+| Data Element | Mineral | P&G | Coal | PGGD01 | PGGD02|
+|---|---|---|---|---|---|
+|bore_id|yes|---|yes|yes |yes|
+|bore_name|---|yes|yes|yes |yes|
+|bore_alias|---|---|---|--- |---|
+|association|---|---|yes|---|---|
+|purpose|---|---|yes|yes|yes|
+|sub_purpose|---|---|yes|yes|yes|
+|drilling_method|drill_type|yes|yes|---|---|
+|status|---|---|yes|yes|yes|
+|status_event|---|---|---|yes|yes|
+|status_date|---|---|---|yes|yes|
+|origin_latitude|easting|---|yes|yes|yes|
+|origin_longitude|northing|---|yes|yes|yes|
+|origin_elevation|yes|---|yes|---|---|
+|depth_datum|---|---|yes|---|---|
+|location_confidence|---|---|---|---| ---|
+|total_depth|yes|---|yes|planned|yes|
+|azimuth|yes - numeric|yes - numeric|---|---|---|
+|inclination|yes - numeric|yes - numeric|yes - textual|yes|yes|
+|surface_circumstance|---|---|---|---|---|
+|drill_start_date|yes|yes|spud_date|estimated |yes|
+|drill_end_date|yes|yes|yes|estimated|yes|
+|permit_type|yes|---|yes|yes |yes|
+|permit_number|yes|---|yes|yes|yes|
+|operator|yes|---|yes|yes|yes|
+|driller|---|yes|yes|---|---|
+|geometry|---|---|---|---|---|
+
+
 ## Borehole data mapping to standards
 | Data element | MERLIN | PPDM | GeosciML | CoalLog |
 |---|---|---|---|---|
