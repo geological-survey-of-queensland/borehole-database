@@ -28,7 +28,7 @@ While the borehole entity is generalised, datasets can be specialised for partic
  2. The register helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
  3. The register is a single, trusted system of record for all boreholes in Queensland.
  4. The register is integrated with data input mechanisms, data consumers, and data display systems.  
- 5. The register levereages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
+ 5. The register leverages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
 
 ### What the borehole register is not
 The register is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
@@ -45,7 +45,7 @@ The borehole register is derived from the following standards:
 <img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/simplified_borehole_data_model.png" width="680"><br>
 Figure 1: Borehole data categories</p>
 
-The above diagram shows the broad categories of data that are recorded for boreholes and is not exhaustive. 
+The above diagram shows the broad categories of data that are recorded for boreholes and is not exhaustive. The intention of this diagram is to cause us to think of our data in a categorical way.
 
 ## Borehole conceptual data model
 <p align="center">
