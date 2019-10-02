@@ -31,7 +31,7 @@ While the borehole entity is generalised, datasets can be specialised for partic
  5. The register levereages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
 
 ### What the borehole register is not
-The register is not a borehole data management system. There are multiple commercial systems that meet this need.  
+The register is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
 
 ## Derivation
 The borehole register is derived from the following standards:
@@ -45,7 +45,7 @@ The borehole register is derived from the following standards:
 <img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/simplified_borehole_data_model.png" width="680"><br>
 Figure 1: Borehole data categories</p>
 
-The above diagram shows the broad categories of data that are recorded for boreholes. 
+The above diagram shows the broad categories of data that are recorded for boreholes and is not exhaustive. 
 
 ## Borehole conceptual data model
 <p align="center">
