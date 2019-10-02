@@ -78,10 +78,10 @@ Figure 2: Borehole conceptual data model</p>
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
 |rig_release_date|Date the drilling rig was released from operations on the well or bore.|--|
-|permit_type|The resource authority under which the borehole activity occurred.|--|
-|permit_number|The resource authority under which the borehole activity occurred.|--|
-|operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole).|--|
-|driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole).|--|
+|permit_type|The resource authority under which the borehole activity occurred. A lookup to the permit register.|--|
+|permit_number|The resource authority under which the borehole activity occurred. A lookup to the permit register.|--|
+|operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole). A lookup to the organisation register.|--|
+|driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole). A lookup to the organisation register.|--|
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
 |see_also|Contains reference to JSON metadata and data files. Can also reference to related documents or datasets.|--|
 |remarks|Any narrative comments or remarks about this borehole.|--|
