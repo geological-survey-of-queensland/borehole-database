@@ -94,8 +94,8 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
 |Company report no|QDEX reports will be migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
-|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Analysis required.|
-|Hold location|This data is displayed in GeoResGlobe. Analysis required.|
+|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Data should be migrated to the samples and observations register with a reference to the borehole they were taken from.|
+|Hold location|This data is displayed in GeoResGlobe. Data should be migrated to the samples and observations register with a reference to the "Held" data element.|
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
 
@@ -107,7 +107,6 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|--|
 |Total depth logger|This data is displayed in GeoResGlobe.|--|
 |Perforation|This data is displayed in GeoResGlobe.|--|
-|Comments|Of the 56000 boreholes in MERLIN, 7000 have comments. Can be captured for historical records, but not considered primary metadata.|--|
 
 
 ## Borehole data mapping to industry reporting templates
