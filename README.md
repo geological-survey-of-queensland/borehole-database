@@ -71,16 +71,20 @@ Figure 2: Borehole conceptual data model</p>
 |depth_datum|The point from which all depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
 |location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
+|well_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
 |azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
-|inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). GeoSciML uses a term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal.|--|
-|surface_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
+|inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward).|--|
+|origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
+|rig_release_date|Date the drilling rig was released from operations on the well or bore.|--|
 |permit_type|The resource authority under which the borehole activity occurred.|--|
 |permit_number|The resource authority under which the borehole activity occurred.|--|
 |operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole).|--|
 |driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole).|--|
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
+|see_also|Contains reference to JSON metadata and data files. Can also reference to related documents or datasets.|--|
+|remarks|Any narrative comments or remarks about this borehole.|--|
 
 ### Borehole data elements that are inferred
 We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole register. This reference allows us to **infer** the data relationships.
@@ -192,8 +196,15 @@ The following vocabularies are required:
 |depth datum|rotary table, kelly bushing, ground level, other|ground level, drillpipe collar, rotary table, other|--|
 
 ## Software design
-The current MERLIN Oracle database is a relational database with 58 borehole-related tables.  
-* TODO - add last edited
+The current MERLIN Oracle database is a relational database with 58 borehole-related tables:  
+* 6 tables with current data updates  
+* 5 tables last updated mid 2018  
+* 12 tables last updated mid 2017  
+* 9 tables last updated betweeen 2012 and 2016  
+* 8 tables last updated in early 2010  
+* 3 tables last updated 1996-2007  
+* 9 tables with no data  
+
 
 The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For an example of this, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
 http://jsoneditoronline.org/. 
