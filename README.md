@@ -7,7 +7,7 @@ A borehole is a narrow shaft bored in the ground. A borehole may be constructed 
 Well, drillhole, and bore are synonyms of borehole.
 
 ## Background
- - Boreholes exist for a wide range of purposes, with varying lifecycles and actors.  
+ - Boreholes exist for a wide range of purposes, with varying lifecycles and [actors](https://en.wikipedia.org/wiki/Actor_(UML)).  
  - There are multiple systems of record for boreholes across government, e.g. [GSQ](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [RSH](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [OGIA](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [DES](https://www.des.qld.gov.au/).  
  - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for mineral, [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
