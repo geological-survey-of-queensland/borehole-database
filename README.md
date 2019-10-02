@@ -206,14 +206,16 @@ The current MERLIN Oracle database is a relational database with 58 borehole-rel
 * 9 tables with no data  
 
 
-The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For an example of this, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
+The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. e.g. If the **driller = ACME Drilling**, the key is **driller** and the value is **ACME Drilling**. Another example is **Rig Release Date** (key) = **25-01-2018** (value).  
+
+For an example of borehole key-value pairs, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
 http://jsoneditoronline.org/. 
 
 ### Reporting & Analytics:
 Borehole data compilations can be created in Amazon Redshift (data warehouse). e.g. We could create a prepared view of all boreholes by region. 
 
 ### Data migration
-Existing MERLIN data will be extracted from the Oracle database. Primary metadata is written to the database, the remainder of the data written to JSON key-value pairs.
+Existing MERLIN data will be extracted from the Oracle database. Primary metadata is written to the database, the remainder of the data written to JSON key-value pairs. ALL historical data required to be preserved will be stored in the new system.
 
 ### Data extraction from new reporting guidelines
 As data is submitted by industry through the lodgement portal, the borehole data can be harvested from the submitted Excel files. Primary metadata is written to the database, other data written to JSON key-value pairs.
