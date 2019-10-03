@@ -1,4 +1,4 @@
-# GSQ Borehole Register
+# GSQ Borehole Database
 
 ## Terminology
 
@@ -12,29 +12,29 @@ Well, drillhole, and bore are synonyms of borehole.
  - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for mineral, [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
 
-## The borehole register 
+## The borehole database 
 
-The Geological Survey of Queensland is creating a new register of boreholes to replace the existing MERLIN system.
+The Geological Survey of Queensland is creating a new database of boreholes to replace the existing MERLIN system.
 
-The primary focus of the register is to record details of the borehole entity - the narrow shaft bored in the ground.
+The primary focus of the database is to record details of the borehole entity - the narrow shaft bored in the ground.
 
-Borehole entities in borehole register can link to one or many datasets, e.g. wireline logs, cores and cuttings, geochemistry, etc. 
+Borehole entities in borehole database can link to one or many datasets, e.g. wireline logs, cores and cuttings, geochemistry, etc. 
 
 While the borehole entity is generalised, datasets can be specialised for particular commodity groups and purposes.
 
 ### Objectives of the borehole register
 
  1. Queensland Government knows the location, attributes and status of all boreholes in Queensland.  
- 2. The register helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
- 3. The register is a single, trusted system of record for all boreholes in Queensland.
- 4. The register is integrated with data input mechanisms, data consumers, and data display systems.  
- 5. The register leverages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
+ 2. The database helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
+ 3. The database is a single, trusted system of record for all boreholes in Queensland.
+ 4. The database is integrated with data input mechanisms, data consumers, and data display systems.  
+ 5. The database leverages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
 
-### What the borehole register is not
-The register is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
+### What the borehole database is not
+The borehole database is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
 
 ## Derivation
-The borehole register is derived from the following standards:
+The borehole database is derived from the following standards:
 
  - [PPDM](https://ppdm.org) for petroleum and gas
  - [GeoSciML](http://www.geosciml.org/) for mineral
@@ -92,9 +92,9 @@ We avoid data duplication by creating a **reference** to data held in other regi
 | Data element | How is it inferred? | 
 |---|---|
 |Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
-|Company report no|QDEX reports will be migrated to the new report register and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
+|Company report no|QDEX reports will be migrated to the new report database and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
-|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Data should be migrated to the samples and observations register with a reference to the borehole they were taken from.|
+|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Data should be migrated to the samples and observations database with a reference to the borehole they were taken from.|
 |Hold location|This data is displayed in GeoResGlobe. Data should be migrated to the samples and observations register with a reference to the "Held" data element.|
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
