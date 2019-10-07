@@ -233,7 +233,7 @@ This code repository's content are licensed under the [Creative Commons Attribut
 
 
 ## Contacts
-*Vocabularies owner*:  
+*System owner*:  
 **Mark Gordon**  
 Geological Survey of Quensland  
 Department of Natural Resources, Mines and Energy  
