@@ -38,7 +38,7 @@ The borehole database is derived from the following standards:
 
  - [PPDM](https://ppdm.org) for petroleum and gas
  - [GeoSciML](http://www.geosciml.org/) for mineral
- - [GGIC Data templates] for mineral
+ - [GGIC National Guideline Data templates](http://www.australiaminerals.gov.au/__data/assets/pdf_file/0004/60772/National_Guidelines_Version_4.5_February_18.pdf) for mineral reporting
  - [CoalLog](https://ausimm.com/coal-log/) for coal
  
 ## Borehole data categories
