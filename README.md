@@ -22,7 +22,7 @@ Borehole entities in borehole database can link to one or many datasets, e.g. wi
 
 While the borehole entity is generalised, datasets can be specialised for particular commodity groups and purposes.
 
-### Objectives of the borehole register
+### Objectives of the borehole database
 
  1. Queensland Government knows the location, attributes and status of all boreholes in Queensland.  
  2. The database helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
@@ -87,7 +87,7 @@ Figure 2: Borehole conceptual data model</p>
 |remarks|Any narrative comments or remarks about this borehole.|--|
 
 ### Borehole data elements that are inferred
-We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole register. This reference allows us to **infer** the data relationships.
+We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole database. This reference allows us to **infer** the data relationships.
 
 | Data element | How is it inferred? | 
 |---|---|
