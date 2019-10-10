@@ -2,9 +2,9 @@
 
 ## Terminology
 
-A borehole is a narrow shaft bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, liquids such as petroleum, or gases such as natural gas, as part of a geotechnical investigation, mineral exploration, temperature measurement, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.
+A borehole is a narrow shaft bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, oil, and natural gas, as part of a geotechnical investigation, mineral exploration, temperature measurement, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.
 
-Well, drillhole, and bore are synonyms of borehole.
+Boreholes are synonymous with a range of terms including well, bore, drillhole and corehole.
 
 ## Background
  - Boreholes exist for a wide range of purposes, with varying lifecycles and [actors](https://en.wikipedia.org/wiki/Actor_(UML)).  
@@ -14,7 +14,7 @@ Well, drillhole, and bore are synonyms of borehole.
 
 ## The borehole database 
 
-The Geological Survey of Queensland is creating a new database of boreholes to replace the existing MERLIN system.
+The Geological Survey of Queensland is creating a new borehole database to replace the existing borehole functionality in the MERLIN system.
 
 The primary focus of the database is to record details of the borehole entity - the narrow shaft bored in the ground.
 
@@ -38,6 +38,7 @@ The borehole database is derived from the following standards:
 
  - [PPDM](https://ppdm.org) for petroleum and gas
  - [GeoSciML](http://www.geosciml.org/) for mineral
+ - [GGIC Data templates] for mineral
  - [CoalLog](https://ausimm.com/coal-log/) for coal
  
 ## Borehole data categories
@@ -68,13 +69,13 @@ Figure 2: Borehole conceptual data model</p>
 |origin_latitude|Angular distance in decimal degrees, east or west of the prime meridian. A negative value represents a west longitude.|--|
 |origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|--|
 |origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|--|
+|origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
 |depth_datum|The point from which all depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
 |location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
 |well_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
 |azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward).|--|
-|origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
 |rig_release_date|Date the drilling rig was released from operations on the well or bore.|--|
