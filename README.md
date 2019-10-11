@@ -131,7 +131,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |total_depth|yes|---|yes|planned|yes|
 |azimuth|yes - numeric|yes - numeric|---|---|---|
 |inclination|yes - numeric|yes - numeric|yes - textual|yes|yes|
-|surface_circumstance|---|---|---|---|---|
+|origin_circumstance|---|---|---|---|---|
 |drill_start_date|yes|yes|spud_date|estimated |yes|
 |drill_end_date|yes|yes|yes|estimated|yes|
 |permit_type|yes|---|yes|yes |yes|
@@ -161,7 +161,7 @@ We avoid data duplication by creating a **reference** to data held in other regi
 |total_depth|--|final_td|boreholelength|total_depth|
 |azimuth|bhf_orientations<br>azimuth|--|--|azimuth|
 |inclination|well_path|--|inclinationtype|inclination|
-|surface_circumstance|--|--|startpoint|--|
+|origin_circumstance|--|--|startpoint|--|
 |drill_start_date|spud_date|spud_date|dateofdrilling|drill_date|
 |drill_end_date|completion_date|completion_date|dateofdrilling|complete_date|
 |permit_type|tenure_type|lease_name|--|lease_no|
@@ -192,7 +192,7 @@ The following vocabularies are required:
 |borehole status|cased and suspended, completed, on injection, on production, plugged and abandoned, suspended|--|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|
 |borehole inclination|vertical, deviated|--|--|
-|borehole surface circumstance|--|--|--|
+|borehole origin circumstance|--|--|--|
 |depth datum|rotary table, kelly bushing, ground level, other|ground level, drillpipe collar, rotary table, other|--|
 
 ## Software design
