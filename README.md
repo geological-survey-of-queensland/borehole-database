@@ -16,7 +16,7 @@ Boreholes are synonymous with a range of terms including well, bore, drillhole a
 
 The Geological Survey of Queensland is creating a new borehole database to replace the existing borehole functionality in the MERLIN system.
 
-The primary focus of the database is to record details of the borehole entity - the narrow shaft bored in the ground.
+The primary focus of the database is to record details of the borehole entity and its primary attributes. This **does not** mean that we lose all of the other borehole-related data, we just capture and manage that data in a smarter way.
 
 Borehole entities in borehole database can link to one or many datasets, e.g. wireline logs, cores and cuttings, geochemistry, etc. 
 
