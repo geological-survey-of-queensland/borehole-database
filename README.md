@@ -75,7 +75,7 @@ Figure 2: Borehole conceptual data model</p>
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
 |well_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
 |azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
-|inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward).|--|
+|inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). Note: Inclination is dealt with differently by minerals and petroleum. Vertical is -90° in minerals and 0° in petroleum.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
 |rig_release_date|Date the drilling rig was released from operations on the well or bore.|--|
@@ -181,7 +181,7 @@ The following vocabularies are required:
 |borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|active, in-active, plugged and abandoned, reclaimed|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|--|
 |borehole inclination|vertical, horizontal, vertical and horizontal|--|vertical, horizontal, directional|--|
-|borehole surface circumstance|--|--|--|--|
+|borehole origin circumstance|--|--|--|--|
 
 ### Reporting guideline lookup values
 | Vocabulary | P&G | Mineral | Coal |
