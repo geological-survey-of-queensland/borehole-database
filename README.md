@@ -9,10 +9,10 @@ Boreholes are synonymous with a range of terms including well, bore, drillhole a
 ## Background
  - Boreholes exist for a wide range of purposes, with varying lifecycles and [actors](https://en.wikipedia.org/wiki/Actor_(UML)).  
  - There are multiple systems of record for boreholes across government, e.g. [GSQ](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [RSH](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [OGIA](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [DES](https://www.des.qld.gov.au/).  
- - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for mineral, [CoalLog](https://ausimm.com/coal-log/) for coal.  
+ - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for minerals, and [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
 
-## The borehole database 
+## The Borehole Database 
 
 The Geological Survey of Queensland is creating a new borehole database to replace the existing borehole functionality in the MERLIN system.
 
@@ -22,13 +22,13 @@ Borehole entities in borehole database can link to one or many datasets, e.g. wi
 
 While the borehole entity is generalised, datasets can be specialised for particular commodity groups and purposes.
 
-### Objectives of the borehole database
+### Objectives of the Borehole Database
 
  1. Queensland Government knows the location, attributes and status of all boreholes in Queensland.  
  2. The database helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
  3. The database is a single, trusted system of record for all boreholes in Queensland.
  4. The database is integrated with data input mechanisms, data consumers, and data display systems.  
- 5. The database leverages schema-on-read instead of schema-on-write to be able to store all borehole data variations.
+ 5. The database leverages schema-on-read (instead of schema-on-write) to be able to store all borehole data variations.
 
 ### What the borehole database is not
 The borehole database is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
@@ -37,7 +37,7 @@ The borehole database is not a borehole data management system. There are multip
 The borehole database is derived from the following standards:
 
  - [PPDM](https://ppdm.org) for petroleum and gas
- - [GeoSciML](http://www.geosciml.org/) for mineral
+ - [GeoSciML](http://www.geosciml.org/) for minerals
  - [GGIC National Guideline Data templates](http://www.australiaminerals.gov.au/__data/assets/pdf_file/0004/60772/National_Guidelines_Version_4.5_February_18.pdf) for mineral reporting
  - [CoalLog](https://ausimm.com/coal-log/) for coal
  
@@ -78,25 +78,25 @@ Figure 2: Borehole conceptual data model</p>
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). Note: Inclination is dealt with differently by minerals and petroleum. Vertical is -90° in minerals and 0° in petroleum.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
-|rig_release_date|Date the drilling rig was released from operations on the well or bore.|--|
-|permit_type|The resource authority under which the borehole activity occurred. A lookup to the permit register.|--|
-|permit_number|The resource authority under which the borehole activity occurred. A lookup to the permit register.|--|
+|rig_release_date|Date the drilling rig was released from operations on the borehole.|--|
+|permit_type|The permit type under which the borehole activity occurred. A lookup to the permit register.|--|
+|permit_number|The permit number under which the borehole activity occurred. A lookup to the permit register.|--|
 |operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole). A lookup to the organisation register.|--|
 |driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole). A lookup to the organisation register.|--|
 |geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
-|see_also|Contains reference to JSON metadata and data files. Can also reference to related documents or datasets.|--|
+|see_also|Contains reference to JSON metadata and data files. Can also reference related documents or datasets.|--|
 |remarks|Any narrative comments or remarks about this borehole.|--|
 
-### Borehole data elements that are inferred
-We avoid data duplication by creating a **reference** to data held in other registers, instead of copying that data into the borehole database. This reference allows us to **infer** the data relationships.
+### Inferred borehole data elements
+Data duplication is avoided by creating a **reference** to data held in other registers, instead of copying that data into the borehole database. This reference allows us to **infer** the data relationships.
 
 | Data element | How is it inferred? | 
 |---|---|
 |Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
-|Company report no|QDEX reports will be migrated to the new report database and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
+|Company report number|QDEX reports will be migrated to the new report database and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
-|Held|(cuttings/core/sidewall) This data is currently held in MERLIN. Data should be migrated to the samples and observations database with a reference to the borehole they were taken from.|
-|Hold location|This data is displayed in GeoResGlobe. Data should be migrated to the samples and observations register with a reference to the "Held" data element.|
+|Held|Data for cuttings, cores and sidewall cores are currently held in MERLIN and should be migrated to the samples and observations database, with a reference to the borehole they were taken from.|
+|Hold location|This data is displayed in GeoResGlobe. Data should be migrated to the samples and observations database with a reference to the 'Held' data element.|
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
 
@@ -206,16 +206,16 @@ The current MERLIN Oracle database is a relational database with 58 borehole-rel
 * 9 tables with no data  
 
 
-The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. e.g. If the **driller = ACME Drilling**, the key is **driller** and the value is **ACME Drilling**. Another example is **Rig Release Date** (key) = **25-01-2018** (value).  
+The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For example, if the **driller = ACME Drilling**, the key is **driller** and the value is **ACME Drilling**. Another example is **Rig Release Date** (key) = **25-01-2018** (value).  
 
 For an example of borehole key-value pairs, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
 http://jsoneditoronline.org/. 
 
-### Reporting & Analytics:
-Borehole data compilations can be created in Amazon Redshift (data warehouse). e.g. We could create a prepared view of all boreholes by region. 
+### Reporting & analytics
+Borehole data compilations can be created in Amazon Redshift (data warehouse). For example, we could create a prepared view of all boreholes by region. 
 
 ### Data migration
-Existing MERLIN data will be extracted from the Oracle database. Primary metadata is written to the database, the remainder of the data written to JSON key-value pairs. ALL historical data required to be preserved will be stored in the new system.
+Existing MERLIN data will be extracted from the Oracle database. Primary metadata will be written to the database, the remainder of the data written to JSON key-value pairs. ALL historical data required to be preserved will be stored in the new system.
 
 ### Data extraction from new reporting guidelines
 As data is submitted by industry through the lodgement portal, the borehole data can be harvested from the submitted Excel files. Primary metadata is written to the database, other data written to JSON key-value pairs.
