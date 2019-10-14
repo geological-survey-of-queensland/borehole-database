@@ -4,11 +4,11 @@
 
 A borehole is a narrow shaft bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, oil, and natural gas, as part of a geotechnical investigation, mineral exploration, temperature measurement, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.
 
-Boreholes are synonymous with a range of terms including well, bore, drillhole and corehole.
+'Borehole' is synonymous with a range of terms including 'well', 'bore', 'drillhole and corehole.
 
 ## Background
  - Boreholes exist for a wide range of purposes, with varying lifecycles and [actors](https://en.wikipedia.org/wiki/Actor_(UML)).  
- - There are multiple systems of record for boreholes across government, e.g. [GSQ](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [RSH](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [OGIA](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [DES](https://www.des.qld.gov.au/).  
+ - There are multiple systems of record for boreholes across government, e.g. [Geological Survey of Queensland](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [DNRME Resources Safety and Health](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [Office of Groundwater Impact](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [Department of Environment and Science](https://www.des.qld.gov.au/).  
  - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for minerals, and [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
 
@@ -56,12 +56,12 @@ Figure 2: Borehole conceptual data model</p>
 ## Borehole data elements
 | Data Element | Description | Rank |
 |---|---|---|
-|bore_id|A persistent identifier for the borehole.|--|
-|bore_name|Unique name and/or number assigned to each borehole.|--|
-|bore_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
+|borehole_id|A persistent identifier for the borehole.|--|
+|borehole_name|Unique name and/or number assigned to each borehole.|--|
+|borehole_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
 |association|Relationship to other boreholes, e.g. parent, previous, etc.|--|
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
-|sub_purpose|A narrower definition of the purpose.|--|
+|sub_purpose|A narrower definition of the purpose, for example ‘Exploration’, ‘Appraisal’, ‘Development’, ‘Water supply’.|--|
 |drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|--|
 |status|The current status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended.|--|
 |status_event|The event that triggered the status change, e.g. lodging of notice of intention to drill, lodging of well completion report.|--|
@@ -113,29 +113,29 @@ Data duplication is avoided by creating a **reference** to data held in other re
 ## Borehole data mapping to industry reporting templates
 | Data Element | Mineral | P&G | Coal | PGGD01 | PGGD02|
 |---|---|---|---|---|---|
-|bore_id|yes|---|yes|yes |yes|
-|bore_name|---|yes|yes|yes |yes|
-|bore_alias|---|---|---|--- |---|
+|borehole_id|yes|---|yes|yes |yes|
+|borehole_name|---|yes|yes|yes |yes|
+|borehole_alias|---|---|---|--- |---|
 |association|---|---|yes|---|---|
-|purpose|---|---|yes|yes|yes|
-|sub_purpose|---|---|yes|yes|yes|
+|purpose|---|yes|yes|yes|yes|
+|sub_purpose|---|yes|yes|yes|yes|
 |drilling_method|drill_type|yes|yes|---|---|
-|status|---|---|yes|yes|yes|
+|status|---|yes|yes|yes|yes|
 |status_event|---|---|---|yes|yes|
 |status_date|---|---|---|yes|yes|
 |origin_latitude|easting|---|yes|yes|yes|
 |origin_longitude|northing|---|yes|yes|yes|
 |origin_elevation|yes|---|yes|---|---|
-|depth_datum|---|---|yes|---|---|
+|depth_datum|---|yes|yes|---|---|
 |location_confidence|---|---|---|---| ---|
-|total_depth|yes|---|yes|planned|yes|
+|total_depth|yes|yes|yes|planned|yes|
 |azimuth|yes - numeric|yes - numeric|---|---|---|
 |inclination|yes - numeric|yes - numeric|yes - textual|yes|yes|
 |origin_circumstance|---|---|---|---|---|
 |drill_start_date|yes|yes|spud_date|estimated |yes|
 |drill_end_date|yes|yes|yes|estimated|yes|
-|permit_type|yes|---|yes|yes |yes|
-|permit_number|yes|---|yes|yes|yes|
+|permit_type|yes|yes|yes|yes |yes|
+|permit_number|yes|yes|yes|yes|yes|
 |operator|yes|---|yes|yes|yes|
 |driller|---|yes|yes|---|---|
 |geometry|---|---|---|---|---|
@@ -144,13 +144,13 @@ Data duplication is avoided by creating a **reference** to data held in other re
 ## Borehole data mapping to standards
 | Data element | MERLIN | PPDM | GeosciML | CoalLog |
 |---|---|---|---|---|
-|bore_id| bore_no | well_num |-|-|
-|bore_name | primary_bore_name |well_name| drillhole_id |borehole_name |
-|bore_alias |secondary_bore_name<br>prev_bore_id|well_alias|-|-|
+|borehole_id| bore_no | well_num |-|-|
+|borehole_name | primary_bore_name |well_name| drillhole_id |borehole_name |
+|borehole_alias |secondary_bore_name<br>prev_bore_id|well_alias|-|-|
 |purpose|bore_type_code|--|purpose|borehole_type<br>borehole_purpose_x|
 |sub_purpose|bore_subtype_code|--|--|--|
-|drilling_method| |--|drillingmethod|bit_type|
-|status|--|current_status|--|borehole_status_x|
+|drilling_method|drill_method_code|--|drillingmethod|bit_type|
+|status|bore_status_code|current_status|--|borehole_status_x|
 |status_date|status_date|current_status_date|--|--|
 |status_event| |--|--|--|
 |origin_latitude|bhf_locations|surface_latitude|location|easting|
@@ -168,7 +168,7 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |permit_number|tenure_no|lease_num|--|lease_no|
 |operator|operator_code|operator|operator|--|
 |driller|--|--|driller|drill_company|
-|geometry|--|--|--|--|
+|geometry|bhf_orientations|--|--|--|
 
 ## Borehole vocabularies
 The following vocabularies are required:
@@ -188,7 +188,7 @@ The following vocabularies are required:
 |---|---|---|---|
 |borehole purpose|csg, petroleum, petroleum injection well, water injection well, water observation bore, water supply bore|--|--||
 |borehole sub-purpose|exploration, appraisal, development|--|--|
-|borehole drilling method|--|air core, auger mechanical, calweld large diameter, diamond drill hole, pre-collared drillhole, open hole percussion, rotary air blast hole, reverse circulation percussion, rotary mud, unknown drill type, vacuum bedrock drill hole, vibratory drill hole, sonic, water bore, navi drilling, sonic drilling|--|
+|borehole drilling method|core impregnated, core PDC, core surface set, core TSD, fixed cutter PDC, hammer, roller cone, roller cone insert, roller cone milled tooth |air core, auger mechanical, calweld large diameter, diamond drill hole, pre-collared drillhole, open hole percussion, rotary air blast hole, reverse circulation percussion, rotary mud, unknown drill type, vacuum bedrock drill hole, vibratory drill hole, sonic, water bore, navi drilling, sonic drilling|--|
 |borehole status|cased and suspended, completed, on injection, on production, plugged and abandoned, suspended|--|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|
 |borehole inclination|vertical, deviated|--|--|
