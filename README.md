@@ -62,7 +62,7 @@ Figure 2: Borehole conceptual data model</p>
 |association|Relationship to other boreholes, e.g. parent, previous, etc.|--|
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
 |sub_purpose|A narrower definition of the purpose, for example ‘Exploration’, ‘Appraisal’, ‘Development’, ‘Water supply’.|--|
-|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|--|
+|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc. NOTE: Should this be 'bit type' instead?|--|
 |status|The current status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended.|--|
 |status_event|The event that triggered the status change, e.g. lodging of notice of intention to drill, lodging of well completion report.|--|
 |status_date|The date of the status event.|--|
@@ -70,7 +70,7 @@ Figure 2: Borehole conceptual data model</p>
 |origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|--|
 |origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|--|
 |origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
-|depth_datum|The point from which all depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
+|depth_datum|The point from which depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
 |location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
 |well_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
@@ -155,10 +155,10 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |status_event| |--|--|--|
 |origin_latitude|bhf_locations|surface_latitude|location|easting|
 |origin_longitude|bhf_locations|surface_longitude|location|northing|
-|origin_elevation|--|depth_datum_elev|elevation|--|
+|origin_elevation|ground_level_rl<br>+ collar_height|depth_datum_elev|elevation|--|
 |depth_datum|elev_datum_code|depth_datum|borehole-elevation-crs|height_datum|
 |location_confidence|loc_method_code<br>loc_accuracy|--|--|location_acc|
-|total_depth|--|final_td|boreholelength|total_depth|
+|total_depth|total_depth_driller_MD|final_td|boreholelength|total_depth|
 |azimuth|bhf_orientations<br>azimuth|--|--|azimuth|
 |inclination|well_path|--|inclinationtype|inclination|
 |origin_circumstance|--|--|startpoint|--|
