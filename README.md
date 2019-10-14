@@ -220,6 +220,9 @@ Existing MERLIN data will be extracted from the Oracle database. Primary metadat
 ### Data extraction from new reporting guidelines
 As data is submitted by industry through the lodgement portal, the borehole data can be harvested from the submitted Excel files. Primary metadata is written to the database, other data written to JSON key-value pairs.
 
+### Application programming interfaces (APIs)
+APIs (a software intermediary that allows software applications to talk to each other) will be built to enable data sharing with other businesses.
+
 ## See also
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
