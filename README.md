@@ -235,8 +235,8 @@ APIs (a software intermediary that allows software applications to talk to each 
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
 * PPDM [International Petroleum Data Standards](https://ppdm.org/ppdm/PPDM/IPDS/PPDM/IPDS.aspx)
-* GeoSciML (Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
-* GeoSciML Lite (Borehole View](http://docs.opengeospatial.org/is/16-008/16-008.html#403)
+* GeoSciML [Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
+* GeoSciML Lite [Borehole View](http://docs.opengeospatial.org/is/16-008/16-008.html#403)
 * [CoalLog Standard](https://ausimm.com/coal-log/)
 
 
