@@ -104,7 +104,6 @@ Data duplication is avoided by creating a **reference** to data held in other re
 | Data element | Description | Decision |
 |---|---|---|
 |QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|--|
-|Rig release date|This data is displayed in GeoResGlobe.|--|
 |Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|--|
 |Total depth logger|This data is displayed in GeoResGlobe.|--|
 |Perforation|This data is displayed in GeoResGlobe.|--|
@@ -134,6 +133,7 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |origin_circumstance|---|---|---|---|---|
 |drill_start_date|yes|yes|spud_date|estimated |yes|
 |drill_end_date|yes|yes|yes|estimated|yes|
+|rig_release_date|---|yes|---|---|yes|
 |permit_type|yes|yes|yes|yes |yes|
 |permit_number|yes|yes|yes|yes|yes|
 |operator|yes|---|yes|yes|yes|
@@ -164,6 +164,7 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |origin_circumstance|--|--|startpoint|--|
 |drill_start_date|spud_date|spud_date|dateofdrilling|drill_date|
 |drill_end_date|completion_date|completion_date|dateofdrilling|complete_date|
+|rig_release_date|rig_release_date|rig_release_date|--|--|
 |permit_type|tenure_type|lease_name|--|lease_no|
 |permit_number|tenure_no|lease_num|--|lease_no|
 |operator|operator_code|operator|operator|--|
