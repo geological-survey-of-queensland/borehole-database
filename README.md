@@ -1,8 +1,13 @@
 # GSQ Borehole Database
 
+## Purpose of this document
+Provide a specification for the new GSQ Borehole Database that:  
+* Accurately defines the business requirements
+* Is a key input to softare design for a software developer  
+
 ## Terminology
 
-A borehole is a narrow shaft bored in the ground. A borehole may be constructed for many different purposes, including the extraction of water, oil, and natural gas, as part of a geotechnical investigation, mineral exploration, temperature measurement, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.
+A borehole is the generalised term for any narrow shaft drilled in the ground, either vertically, horizontally, or inclined. A borehole may be constructed for many different purposes, including the extraction of water, oil, and natural gas, as part of a geotechnical investigation, mineral exploration, temperature measurement, for geothermal installations, or for underground storage of unwanted substances, e.g. in carbon capture and storage.
 
 'Borehole' is synonymous with a range of terms including 'well', 'bore', 'drillhole and corehole.
 
