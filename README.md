@@ -3,7 +3,7 @@
 ## Purpose of this document
 Provide a specification for the new GSQ Borehole Database that:  
 * Accurately defines the business requirements
-* Is a key input to softare design for a software developer  
+* Is a key input to the software design process for a software developer  
 
 ## Terminology
 
