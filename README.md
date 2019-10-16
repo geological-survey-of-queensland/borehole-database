@@ -237,7 +237,8 @@ APIs (a software intermediary that allows software applications to talk to each 
 * PPDM [International Petroleum Data Standards](https://ppdm.org/ppdm/PPDM/IPDS/PPDM/IPDS.aspx)
 * GeoSciML [Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
 * GeoSciML Lite [Borehole View](http://docs.opengeospatial.org/is/16-008/16-008.html#403)
-* [CoalLog Standard](https://ausimm.com/coal-log/)
+* [CoalLog Standard](https://ausimm.com/coal-log/)  
+* [Borehole analysis conducted during GEM project](http://appsuppt103/confluence/display/1EP/Borehole) - internal link only
 
 
 ## License
