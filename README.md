@@ -16,7 +16,7 @@ A borehole may be constructed for many different purposes, including the extract
 ## Background
  - Boreholes exist for a wide range of purposes, with varying lifecycles and agents (a.k.a. [actors](https://en.wikipedia.org/wiki/Actor_(UML))).  
  - There are multiple systems of record for boreholes across government, e.g. [Geological Survey of Queensland](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq), [DNRME Resources Safety and Health](https://www.business.qld.gov.au/industries/mining-energy-water/resources/safety-health), [Office of Groundwater Impact](https://www.business.qld.gov.au/industries/mining-energy-water/resources/landholders/csg/ogia), [Department of Environment and Science](https://www.des.qld.gov.au/).  
- - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403)for minerals, and [CoalLog](https://ausimm.com/coal-log/) for coal.  
+ - There are varying standards across commodity groups, e.g. [PPDM](https://ppdm.org) and [WITSML](http://docs.energistics.org/) for petroleum and gas, [GeoSciML](http://www.geosciml.org/) and [GeoSciML Lite](http://docs.opengeospatial.org/is/16-008/16-008.html#403) for minerals, and [CoalLog](https://ausimm.com/coal-log/) for coal.  
  - The requirements for reporting and data submitted by industry vary under the different legislation and Acts.  
 
 ## The Borehole Database 
