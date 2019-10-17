@@ -25,20 +25,22 @@ The Geological Survey of Queensland is creating a new borehole database to repla
 
 The primary focus of the database is to record details of the borehole entity and its primary attributes. This **does not** mean that we lose all of the other borehole-related data, we just capture and manage that data in a smarter way.
 
+All borehole data currently stored in MERLIN will be migrated to the Borhole Database.
+
 Borehole entities in borehole database can link to one or many datasets, e.g. wireline logs, cores and cuttings, geochemistry, etc. 
 
 While the borehole entity is generalised, datasets can be specialised for particular commodity groups and purposes.
 
 ### Objectives of the Borehole Database
 
- 1. Queensland Government knows the location, attributes and status of all boreholes in Queensland.  
+ 1. Queensland Government knows the location, attributes, and nominal status of all boreholes in Queensland.  
  2. The database helps government to perform custodianship of the borehole as an asset throughout its lifecycle.   
- 3. The database is a single, trusted system of record for all boreholes in Queensland.
+ 3. The database is a single system of record for all boreholes in Queensland.
  4. The database is integrated with data input mechanisms, data consumers, and data display systems.  
  5. The database leverages schema-on-read (instead of schema-on-write) to be able to store all borehole data variations.
 
 ### What the borehole database is not
-The borehole database is not a borehole data management system. There are multiple commercial systems that meet the extended data requirements of specific industries.  
+The borehole database is not a complete well information management system for well planning and operations. There are multiple commercial systems that meet the extended data requirements of specific industries.  
 
 ## Derivation
 The borehole database is derived from the following standards:
@@ -110,10 +112,10 @@ Data duplication is avoided by creating a **reference** to data held in other re
 ### Other borehole data elements that require consideration
 | Data element | Description | Decision |
 |---|---|---|
-|QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|--|
-|Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|--|
-|Total depth logger|This data is displayed in GeoResGlobe.|--|
-|Perforation|This data is displayed in GeoResGlobe.|--|
+|QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|Keep|
+|Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|Link Core Library|
+|Total depth logger|This data is displayed in GeoResGlobe.|Stored in Wireline Dataset|
+|Perforation|This data is displayed in GeoResGlobe.|Stored in Perforation/Engineering Data|
 
 
 ## Borehole data mapping to industry reporting templates
