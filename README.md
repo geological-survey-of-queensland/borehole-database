@@ -25,7 +25,7 @@ The Geological Survey of Queensland is creating a new borehole database to repla
 
 The primary focus of the database is to record details of the borehole entity and its primary attributes. This **does not** mean that we lose all of the other borehole-related data, we just capture and manage that data in a smarter way.
 
-All borehole data currently stored in MERLIN will be migrated to the Borhole Database.
+All borehole data currently stored in MERLIN will be migrated to the Borehole Database.
 
 Borehole entities in borehole database can link to one or many datasets, e.g. wireline logs, cores and cuttings, geochemistry, etc. 
 
@@ -210,7 +210,7 @@ The current MERLIN Oracle database is a relational database with 58 borehole-rel
 * 6 tables with current data updates  
 * 5 tables last updated mid 2018  
 * 12 tables last updated mid 2017  
-* 9 tables last updated betweeen 2012 and 2016  
+* 9 tables last updated between 2012 and 2016  
 * 8 tables last updated in early 2010  
 * 3 tables last updated 1996-2007  
 * 9 tables with no data  
@@ -250,7 +250,7 @@ This code repository's content are licensed under the [Creative Commons Attribut
 ## Contacts
 *System owner*:  
 **Mark Gordon**  
-Geological Survey of Quensland  
+Geological Survey of Queensland  
 Department of Natural Resources, Mines and Energy  
 Brisbane, QLD, Australia  
 <mark.gordon@dnrme.qld.gov.au>  
