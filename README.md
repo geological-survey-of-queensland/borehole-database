@@ -47,8 +47,11 @@ The borehole database is derived from the following standards:
 
  - [PPDM](https://ppdm.org) for petroleum and gas
  - [GeoSciML](http://www.geosciml.org/) for minerals
+ - [GroundWaterML](http://docs.opengeospatial.org/is/16-032r2/16-032r2.html) - a model for the exchange of groundwater data
  - [GGIC National Guideline Data templates](http://www.australiaminerals.gov.au/__data/assets/pdf_file/0004/60772/National_Guidelines_Version_4.5_February_18.pdf) for mineral reporting
- - [CoalLog](https://ausimm.com/coal-log/) for coal
+ - [CoalLog](https://ausimm.com/coal-log/) for coal  
+ - Geoscience Australia's borehole database model (schema available internally only)  
+ - [European Plate Observing System (EPOS) borehole model](https://forge.brgm.fr/svnrepository/epos/trunk/Documents/EPOS_Borehole_V.1.0.1.docx)
  
 ## Borehole data categories
 <p align="center">
@@ -205,6 +208,17 @@ The following vocabularies are required:
 |borehole origin circumstance|--|--|--|
 |depth datum|rotary table, kelly bushing, ground level, other|ground level, drillpipe collar, rotary table, other|--|
 
+## Borehole 'See also' field
+The borehole database purposely focuses on the basic information about boreholes. Detailed and extended borehole-related datasets can be accessed through hyperlinks stored in the 'See also' field. This lets us link to any type of dataset, held by GSQ, GA, other government department, or other party. Dataset examples are:
+- DetailedDescription
+- Geophysical Logs
+- Geological Description
+- Ground Water Level
+- Ground Water Chemistry
+- Rock Geochemistry
+- Pore Gas Chemistry
+- Geotechnical Info
+
 ## Software design
 The current MERLIN Oracle database is a relational database with 58 borehole-related tables:  
 * 6 tables with current data updates  
@@ -240,7 +254,8 @@ APIs (a software intermediary that allows software applications to talk to each 
 * GeoSciML [Borehole Class](http://docs.opengeospatial.org/is/16-008/16-008.html#285)
 * GeoSciML Lite [Borehole View](http://docs.opengeospatial.org/is/16-008/16-008.html#403)
 * [CoalLog Standard](https://ausimm.com/coal-log/)  
-* [Borehole analysis conducted during GEM project](http://appsuppt103/confluence/display/1EP/Borehole) - internal link only
+* [Borehole analysis conducted during GEM project](http://appsuppt103/confluence/display/1EP/Borehole) - internal link only  
+* [CSIRO SEEGrid Boreholes, Sampling & Observations discussions](https://confluence.csiro.au/pages/viewpage.action?pageId=432771103)
 
 
 ## License
