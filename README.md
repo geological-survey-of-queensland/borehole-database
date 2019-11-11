@@ -62,7 +62,7 @@ The above diagram shows the broad categories of data that are recorded for boreh
 
 ## Borehole conceptual data model
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/borehole_conceptual_data_model.svg" width="680"><br>
+<img src="https://github.com/geological-survey-of-queensland/borehole-register/blob/master/images/borehole_conceptual_data_model.svg"><br>
 Figure 2: Borehole conceptual data model</p>
 
 ## Borehole data elements
