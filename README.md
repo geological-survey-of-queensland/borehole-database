@@ -82,7 +82,7 @@ Figure 2: Borehole conceptual data model</p>
 |depth_datum|The point from which depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|Vocab|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|Number|
 |borehole_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
-|azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |Vocab|
+|azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). Note: Inclination is dealt with differently by minerals and petroleum. Vertical is -90° in minerals and 0° in petroleum.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|Date|
 |drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|Date|
@@ -233,8 +233,13 @@ The following vocabularies are required:
 |borehole drilling method|--|See [vocab](https://vocabs.ands.org.au/viewById/124)|--|auger, blades/drag blade, hammer, mill claw, poly crystalline diamond open, rock roller/tricone, surface/wing, diamond core (wireline), poly crystalline diamond core (conventional), poly crystalline diamond core (wireline), tungsten carbide core (conventional)|
 |borehole status|plugged and abandoned, producing hydrocarbons, water bore, suspended/capped/shut-in, proposed to be drilled, never drilled, injecting|--|active, in-active, plugged and abandoned, reclaimed|backfilled, casing removed, cemented, completed, equipment in borehole, hazard in borehole, infrastructure, in progress, mined, piezometer, plugged, rehabilitated, unknown, water bore|
 |borehole status event|--|--|--|--|
-|borehole inclination|vertical, horizontal, vertical and horizontal|--|vertical, horizontal, directional|--|
+|[borehole design](https://vocabs.test.gsq.digital/vocabulary/borehole-design)|vertical, horizontal, vertical and horizontal|--|vertical, horizontal, directional|--|
 |borehole origin circumstance|--|--|--|--|
+|depth datum|--|--|--|--|
+|borehole association|--|--|--|--|
+|geometry types|--|--|--|--|
+|document types|--|--|--|--|
+
 
 ### Reporting guideline lookup values
 | Vocabulary | P&G | Mineral | Coal |
