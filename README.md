@@ -66,56 +66,98 @@ The above diagram shows the broad categories of data that are recorded for boreh
 Figure 2: Borehole conceptual data model</p>
 
 ## Borehole data elements
-| Data Element | Description | Rank |
+| Data Element | Description | Detail |
 |---|---|---|
-|borehole_id|A persistent identifier for the borehole.|--|
-|borehole_name|Unique name and/or number assigned to each borehole.|--|
-|borehole_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency.|--|
-|association|Relationship to other boreholes, e.g. parent, previous, etc.|--|
-|purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|--|
-|sub_purpose|A narrower definition of the purpose, for example ‘Exploration’, ‘Appraisal’, ‘Development’, ‘Water supply’.|--|
-|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc. NOTE: Should this be 'bit type' instead?|--|
-|status|The current status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended.|--|
-|status_event|The event that triggered the status change, e.g. lodging of notice of intention to drill, lodging of well completion report.|--|
-|status_date|The date of the status event.|--|
+|borehole_id|A persistent identifier for the borehole.|Incrementing number|
+|borehole_name|Unique name and/or number assigned to each borehole. Mostly named by industry using their naming conventions.|Text|
+|borehole_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency. The borehole PID will be stored here.|--|
+|association|Relationship to other boreholes, e.g. parent, previous, etc. While the majority of relationships are 1:1, we allow for multiple associations recorded in a separate table.|--|
+|purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|Vocab|
+|sub_purpose|A narrower definition of the purpose, for example ‘Exploration’, ‘Appraisal’, ‘Development’, ‘Water supply’.|Vocab|
+|status|The _current_ status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended. Each change in status is recorded in a separate table.|Vocab|
 |origin_latitude|Angular distance in decimal degrees, east or west of the prime meridian. A negative value represents a west longitude.|--|
 |origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|--|
-|origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|--|
-|origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|--|
-|depth_datum|The point from which depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|--|
-|location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|--|
-|total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|--|
-|well_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
-|azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
+|origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|Number|
+|origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|Vocab|
+|depth_datum|The point from which depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|Vocab|
+|total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|Number|
+|borehole_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
+|azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |Vocab|
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). Note: Inclination is dealt with differently by minerals and petroleum. Vertical is -90° in minerals and 0° in petroleum.|--|
-|drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|--|
-|drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|--|
-|rig_release_date|Date the drilling rig was released from operations on the borehole.|--|
-|permit_type|The permit type under which the borehole activity occurred. A lookup to the permit register.|--|
-|permit_number|The permit number under which the borehole activity occurred. A lookup to the permit register.|--|
-|operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole). A lookup to the organisation register.|--|
-|driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole). A lookup to the organisation register.|--|
-|geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|--|
-|see_also|Contains reference to JSON metadata and data files. Can also reference related documents or datasets.|--|
-|remarks|Any narrative comments or remarks about this borehole.|--|
+|drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|Date|
+|drill_end_date|Date the drilling operations for the borehole was completed at the total or maximum measured depth of the borehole.|Date|
+|rig_release_date|Date the drilling rig was released from operations on the borehole.|Date|
+|permit_number|The permit type and permit number under which the borehole activity occurred. A lookup to the permit register.|Lookup|
+|operator|The organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole). A lookup to the organisation register.|Lookup|
+|driller|The organisation responsible for drilling the borehole (as opposed to commissioning the borehole). A lookup to the organisation register.|Lookup|
+|geometry|A geospatial representation of the borehole as a point, polygon, or 3D geometry. Where  borehole location in XYZ coordinates is not available, surrogate geometries can be used, e.g. permit geometry, block or sub-block, mapsheet.|WKT|
+|see_also|Contains reference to JSON metadata and data files. Can also reference related documents or datasets.|Hyperlink|
+|remarks|Any narrative comments or remarks about this borehole.|Text|
+
+### Data elements removed during review
+| Data Element | Description |
+|---|---|
+|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|
+|location_confidence|An estimate of the accuracy of the location of the borehole collar location in metres. See [Australian Map and Spatial Data  Horizontal Accuracy Standard 2009](https://www.icsm.gov.au/sites/default/files/Spatial_Data_Horizontal_Accuracy.pdf)|
+
+### Wellbore data elements
+A Wellbore is a unique drilled interval within the borehole, either the original borehole from the borehole origin to the terminating point, or additional footage from a point in an existing borehole to a new terminating point.
+
+Wellbore is equivalent to Borehole Interval in GeosciML terminology.
+
+| Data Element | Description | Detail |
+|---|---|---|
+|wellbore_id|A unique identifier for the wellbore. Constructed as<br>[borehole_id]+[Customer supplied identifier] or<br>[borehole_id]+[incrementing integer starting at 0] if no customer supplied identifier exists.|---|
+|borehole_id|The association between a Wellbore and the Borehole to which the interval belongs.|---|
+|wellbore_association|The association between this interval and the parent interval.|---|
+|from_depth|The measured distance of the start of the interval along the path of the borehole.|---|
+|to_depth|The measured distance of the end of the interval along the path of the borehole. |---|
+|diameter|The diameter of the drilled hole interval.|---|
+|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|---|
+|drill_start_date|Date the drilling operations commenced on the interval.|date|
+|drill_end_date|Date the drilling operations for the interval was completed.|date|
+|see_also|Contains reference to JSON metadata and data files. Can also reference related documents or datasets.|Hyperlink|
+
+### Borehole Sub-Tables data elements
+| Table | Field | Detail |
+|---|---|---|
+|Borehole_alias|borehole_alias|Records alternative identifiers for the borehole|
+|Borehole_alias|borehole_alias_source|The source of the alternative identifier|
+|Borehole_alias|borehole_alias_reason|A textual description of why the alias exists|
+|Borehole_association|borehole_id|The identifier of the associated borehole|
+|Borehole_association|associate_type|A controlled vocabulary of associations, e.g. redrill, re-entry|
+|Purpose|purpose|Records the change in purpose over the life of a borehole, e.g. P&G borehole changes to a water bore. Lookup to a controlled vocabulary.|
+|Purpose|purpose_start_date|The start date of the purpose|
+|Purpose|purpose_end_date|The end date of the purpose, NULL until a new purpose row is added|
+|Sub_purpose|subpurpose|Records the change in sub-purpose over the life of a borehole, e.g. P&G borehole changes to a water bore. Lookup to a controlled vocabulary.|
+|Sub_purpose|subpurpose_start_date|The start date of the sub-purpose|
+|Sub_purpose|subpurpose_end_date|The end date of the sub-purpose, NULL until a new sub-purpose row is added|
+|Status|status|The status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended. Each change in status is recorded.|
+|Status|status_event|The event that triggered the status change, e.g. lodging of notice of intention to drill, lodging of well completion report.|
+|Status|status_date|The date of the status event.|
+|Geometry|geometry_id|The PID of the geometry object|
+|Geometry|geometry_type|A controlled vocabulary for geometry type, e.g. SHP file, CSV, GeoJSON|
+|Documents|document_id|The PID of the document|
+|Documents|document_purpose|A controlled vocabulary for document purpose|
+
 
 ### Inferred borehole data elements
 Data duplication is avoided by creating a **reference** to data held in other registers, instead of copying that data into the borehole database. This reference allows us to **infer** the data relationships.
 
 | Data element | How is it inferred? | 
 |---|---|
-|Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole_survey_plan. Alternatively (or in addition), the survey plan could be stored in the geometry.|
+|Survey plan no|Survey plans will be migrated from GEM to CKAN. The survey plan record will contain a reference to the borehole identifier. This data is currently held in GEM. The Survey Plan register will be migrated to the GDMP system. The Survey Plan number and link can be stored in the ```See Also``` field.|
 |Company report number|QDEX reports will be migrated to the new report database and will contain a reference to the borehole identifier. This data is currently held in MERLIN table bhf_borehole.|
 |Wireline log|Wireline logs will migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_wireline_logs.|
-|Held|Data for cuttings, cores and sidewall cores are currently held in MERLIN and should be migrated to the samples and observations database, with a reference to the borehole they were taken from.|
-|Hold location|This data is displayed in GeoResGlobe. Data should be migrated to the samples and observations database with a reference to the 'Held' data element.|
+|Held|Data for cuttings, cores and sidewall cores are currently held in MERLIN and will be migrated to the samples and observations database, with a reference to the borehole they were taken from.|
+|Hold location|This data is displayed in GeoResGlobe. Data will be migrated to the samples and observations database with a reference to the 'Held' data element.|
 |Result|Results will be migrated to the samples and observations database and will have a reference to the borehole identifier. This data is currently held in MERLIN table bhf_boreholes with a lookup to cpf_drill_results.|
 
 
 ### Other borehole data elements that require consideration
 | Data element | Description | Decision |
 |---|---|---|
-|QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|Keep|
+|QWRC RN|This data is displayed in GeoResGlobe. Source is MERLIN bhf_boreholes table.|Store in ```borehole alias```|
 |Hylog release date|This data is displayed in GeoResGlobe. Of the 56000 boreholes in MERLIN, 306 have a record in this field.|Link Core Library|
 |Total depth logger|This data is displayed in GeoResGlobe.|Stored in Wireline Dataset|
 |Perforation|This data is displayed in GeoResGlobe.|Stored in Perforation/Engineering Data|
@@ -138,7 +180,6 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |origin_longitude|northing|---|yes|yes|yes|
 |origin_elevation|yes|---|yes|---|---|
 |depth_datum|---|yes|yes|---|---|
-|location_confidence|---|---|---|---| ---|
 |total_depth|yes|yes|yes|planned|yes|
 |azimuth|yes - numeric|yes - numeric|---|---|---|
 |inclination|yes - numeric|yes - numeric|yes - textual|yes|yes|
@@ -169,7 +210,6 @@ Data duplication is avoided by creating a **reference** to data held in other re
 |origin_longitude|bhf_locations|surface_longitude|location|northing|
 |origin_elevation|ground_level_rl<br>+ collar_height|depth_datum_elev|elevation|--|
 |depth_datum|elev_datum_code|depth_datum|borehole-elevation-crs|height_datum|
-|location_confidence|loc_method_code<br>loc_accuracy|--|--|location_acc|
 |total_depth|total_depth_driller_MD|final_td|boreholelength|total_depth|
 |azimuth|bhf_orientations<br>azimuth|--|--|azimuth|
 |inclination|well_path|--|inclinationtype|inclination|
@@ -246,6 +286,26 @@ As data is submitted by industry through the lodgement portal, the borehole data
 
 ### Application programming interfaces (APIs)
 APIs (a software intermediary that allows software applications to talk to each other) will be built to enable data sharing with other businesses.
+
+### Persistent Identifer (PID)
+PIDs provide a globally unique, web resolvable identifer.
+
+As we consider boreholes to be a type of site, they will follow the *Site* PID scheme:
+
+`http://www.linked.data.gov.au/site/qld/[prefix][site_id]`
+
+MERLIN uses a 6-digit incrementing number for the borehole number (currently up to 76720). The new borehole database will continue this numbering system.
+
+We will use the prefix `bh` to indicate the type of site, appending the borehole number. As an example:
+
+`https://linked.data.gov.au/sites/qld/bh123456`
+
+### Eastings Northings and Latitude Longitude
+The borehole database data entry screens must cater for spatial location information in both:
+* GDA2020 (GDA94) - Latitude, Longitude
+* MGA94 - Eastings, Nothings, Zone number
+
+See https://github.com/geological-survey-of-queensland/coordinate-conversation for instructions on coordinate conversions and how to reuse the HTML form field controls.
 
 ## See also
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
