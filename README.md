@@ -311,6 +311,9 @@ Boreholes and their metadata are available through the following spatial systems
 * [Borehole MapServer](https://gisservices.information.qld.gov.au/arcgis/rest/services/GeoscientificInformation/Boreholes/MapServer)
 * [Geology Information Queensland WFS service](https://geology.information.qld.gov.au/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=gsml:Borehole&featureid=gsml.borehole.58111)
 
+The gisservices MapServer uses the following layers. While some layers map to borehole purpose, others will need to be created by a view (e.g. Hylogged, Core Cutting or Sidewall Held.
+* Coal, CSG, Core Cutting or Sidewall Held, Gas or Gas Show, Greenhouse Gas Storage, Hylogged, Mineral, Oil or Oil Show, Petroleum, Stratigraphic, Water - Petroleum and Gas Act
+
 ### Eastings Northings and Latitude Longitude
 The borehole database data entry screens must cater for spatial location information in both:
 * GDA2020 (GDA94) - Latitude, Longitude
