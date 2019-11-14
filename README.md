@@ -305,6 +305,12 @@ We will use the prefix `bh` to indicate the type of site, appending the borehole
 
 `https://linked.data.gov.au/sites/qld/bh123456`
 
+### Spatial visualisation of boreholes
+Boreholes and their metadata are available through the following spatial systems. Data flows to these systems must be changed from MERLIN to the new borehole database.
+* [GeoresGlobe](https://georesglobe.information.qld.gov.au/)
+* [Borehole MapServer](https://gisservices.information.qld.gov.au/arcgis/rest/services/GeoscientificInformation/Boreholes/MapServer)
+* [Geology Information Queensland WFS service](https://geology.information.qld.gov.au/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=gsml:Borehole&featureid=gsml.borehole.58111)
+
 ### Eastings Northings and Latitude Longitude
 The borehole database data entry screens must cater for spatial location information in both:
 * GDA2020 (GDA94) - Latitude, Longitude
