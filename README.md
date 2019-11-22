@@ -277,7 +277,7 @@ The current MERLIN Oracle database is a relational database with 58 borehole-rel
 
 The new software design will feature a relational database for the primary metadata, with the remaining metadata and data being stored as key-value pairs. For example, if the **driller = ACME Drilling**, the key is **driller** and the value is **ACME Drilling**. Another example is **Rig Release Date** (key) = **25-01-2018** (value).  
 
-For an example of borehole key-value pairs, load this [borehole data extract](https://github.com/geological-survey-of-queensland/borehole-register/blob/master/files/63801_borehole_data.json) into the online tool
+For an example of borehole key-value pairs, load this [borehole data extract](http://jsoneditoronline.org/?id=cc5c12a90c414b769d6a2178ade67775). This will load an example online tool
 http://jsoneditoronline.org/. 
 
 ### Reporting & analytics
