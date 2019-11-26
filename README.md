@@ -68,20 +68,20 @@ Figure 2: Borehole conceptual data model</p>
 ## Borehole data elements
 | Data Element | Description | Detail |
 |---|---|---|
-|borehole_id|A persistent identifier for the borehole.|Incrementing number|
+|borehole_id|A persistent identifier for the borehole.|See [PID](https://github.com/geological-survey-of-queensland/borehole-database/blob/master/README.md#persistent-identifer-pid) below|
 |borehole_name|Unique name and/or number assigned to each borehole. Mostly named by industry using their naming conventions.|Text|
-|borehole_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency. The borehole PID will be stored here.|--|
-|association|Relationship to other boreholes, e.g. parent, previous, etc. While the majority of relationships are 1:1, we allow for multiple associations recorded in a separate table.|--|
+|borehole_alias|Names & identifiers that a borehole may otherwise be known as. Includes previous or alternate borehole identifiers assigned to the borehole by a regulatory agency. The borehole PID will be stored here.|Text|
+|association|Relationship to other boreholes, e.g. parent, previous, etc. While the majority of relationships are 1:1, we allow for multiple associations recorded in a separate table.|Key|
 |purpose|The purpose for which the borehole was drilled, e.g. petroleum, CSG, water injection, water observation, etc.|Vocab|
 |sub_purpose|A narrower definition of the purpose, for example ‘Exploration’, ‘Appraisal’, ‘Development’, ‘Water supply’.|Vocab|
 |status|The _current_ status of the borehole, e.g. intended, cased and suspended, completed, on injection, on production, plugged and abandoned, suspended. Each change in status is recorded in a separate table.|Vocab|
-|origin_latitude|Angular distance in decimal degrees, east or west of the prime meridian. A negative value represents a west longitude.|--|
-|origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|--|
+|origin_latitude|Angular distance in decimal degrees, east or west of the prime meridian. A negative value represents a west longitude.|decimal|
+|origin_longitude|Angular distance in decimal degrees, north or south of the equator. A negative value represents a south latitude.|decimal|
 |origin_elevation|Elevation of the depth datum used as a reference for other measured well or borehole points.|Number|
 |origin_circumstance|A term from a controlled vocabulary indicating the named position relative to ground surface where the borehole commenced, e.g. natural ground surface, open pit floor, underground, offshore.|Vocab|
 |depth_datum|The point from which depths are measured in a well or bore (depth reference datum). For example: kelly bushing (KB), rotary table (RT) or ground level (GL).|Vocab|
 |total_depth|Total or maximum measured depth of the borehole relative to the origin elevation.|Number|
-|borehole_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|--|
+|borehole_design|A term from a controlled vocabulary indicating the inclination type of the borehole. Terms include vertical; inclined up; inclined down, horizontal, deviated.|Vocab|
 |azimuth|The angle (in degrees) of clockwise departure from true north to the borehole direction. |--|
 |inclination|The angle (in degrees) at surface of borehole deviation away from the vertical. 0 degrees inclination is horizontal and -90 degree inclination is vertical (downward). Note: Inclination is dealt with differently by minerals and petroleum. Vertical is -90° in minerals and 0° in petroleum.|--|
 |drill_start_date|Date the drilling operations commenced on the borehole, penetrating the ground surface.|Date|
@@ -107,13 +107,13 @@ Wellbore is equivalent to Borehole Interval in GeosciML terminology.
 
 | Data Element | Description | Detail |
 |---|---|---|
-|wellbore_id|A unique identifier for the wellbore. Constructed as<br>[borehole_id]+[Customer supplied identifier] or<br>[borehole_id]+[incrementing integer starting at 0] if no customer supplied identifier exists.|---|
-|borehole_id|The association between a Wellbore and the Borehole to which the interval belongs.|---|
-|wellbore_association|The association between this interval and the parent interval.|---|
-|from_depth|The measured distance of the start of the interval along the path of the borehole.|---|
-|to_depth|The measured distance of the end of the interval along the path of the borehole. |---|
-|diameter|The diameter of the drilled hole interval.|---|
-|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|---|
+|wellbore_id|A unique identifier for the wellbore. Constructed as<br>[borehole_id]+[Customer supplied identifier] or<br>[borehole_id]+[incrementing integer starting at 0] if no customer supplied identifier exists.|PID|
+|borehole_id|The association between a Wellbore and the Borehole to which the interval belongs.|Key|
+|wellbore_association|The association between this interval and the parent interval.|Vocab|
+|from_depth|The measured distance of the start of the interval along the path of the borehole.|decimal|
+|to_depth|The measured distance of the end of the interval along the path of the borehole. |decimal|
+|diameter|The diameter of the drilled hole interval.|decimal|
+|drilling_method|A term from a controlled vocabulary indicating the drilling method used, e.g rotary air blast, auger, diamond core, air core, etc.|Vocab|
 |drill_start_date|Date the drilling operations commenced on the interval.|date|
 |drill_end_date|Date the drilling operations for the interval was completed.|date|
 |see_also|Contains reference to JSON metadata and data files. Can also reference related documents or datasets.|Hyperlink|
