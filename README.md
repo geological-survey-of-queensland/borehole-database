@@ -323,6 +323,9 @@ The borehole database data entry screens must cater for spatial location informa
 
 See https://github.com/geological-survey-of-queensland/coordinate-conversation for instructions on coordinate conversions and how to reuse the HTML form field controls.
 
+## Migration of wireline logs and associated data
+![Wireline Log Migration Process](https://github.com/geological-survey-of-queensland/borehole-database/blob/master/images/wireline-log-migration.png "Wireline Log Migration Process")
+
 ## See also
 * [Borehole dataset profile](https://github.com/geological-survey-of-queensland/gsq-borehole-profile)
 * PPDM [What is a Well?](https://ppdm.org/ppdm/PPDM/Standards/What_is_a_Well/PPDM/What_is_a_Well.aspx)
