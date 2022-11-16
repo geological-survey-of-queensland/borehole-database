@@ -342,15 +342,8 @@ This code repository's content are licensed under the [Creative Commons Attribut
 
 
 ## Contacts
-*System owner*:  
-**Mark Gordon**  
-Geological Survey of Queensland  
-Department of Natural Resources, Mines and Energy  
-Brisbane, QLD, Australia  
-<mark.gordon@dnrme.qld.gov.au>  
-
-*Author*:  
-**David Crosswell**  
-Enterprise Architect  
-Cross-Lateral Enterprises   
-<https://crosslateral.com.au>  
+**Geoscience Information Team**,
+Geological Survey of Queensland,
+Department of Resources,
+Brisbane, QLD, Australia,
+<geological_info@resources.qld.gov.au>
